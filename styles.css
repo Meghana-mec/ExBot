@@ -1,0 +1,184 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 154, 158, 0.9),
+        rgba(255, 154, 158, 0.9) 20px,
+        rgba(250, 208, 196, 0.9) 20px,
+        rgba(250, 208, 196, 0.9) 40px
+    );
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 5s infinite ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    will-change: transform;
+}
+
+/* Emoji positions with better distribution */
+.emoji:nth-child(1) { top: 5%; left: 5%; }
+.emoji:nth-child(2) { top: 5%; right: 5%; }
+.emoji:nth-child(3) { top: 20%; left: 15%; }
+.emoji:nth-child(4) { top: 20%; right: 15%; }
+.emoji:nth-child(5) { top: 40%; left: 10%; }
+.emoji:nth-child(6) { top: 40%; right: 10%; }
+.emoji:nth-child(7) { bottom: 40%; left: 20%; }
+.emoji:nth-child(8) { bottom: 40%; right: 20%; }
+.emoji:nth-child(9) { bottom: 20%; left: 15%; }
+.emoji:nth-child(10) { bottom: 20%; right: 15%; }
+.emoji:nth-child(11) { bottom: 5%; left: 5%; }
+.emoji:nth-child(12) { bottom: 5%; right: 5%; }
+
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+/* Enhanced Chatbox Styles */
+.chat-container {
+    position: relative;
+    width: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    z-index: 2;
+    margin-top: -50px;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 25px 25px 0 0;
+    text-align: center;
+}
+
+.chat-header h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    margin: 0;
+}
+
+.chat-header p {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 8px 0 0;
+    opacity: 0.9;
+}
+
+.chat-box {
+    height: 350px;
+    padding: 25px;
+    overflow-y: auto;
+    background: rgba(245, 245, 245, 0.95);
+    border-radius: 0 0 25px 25px;
+}
+
+.chat-message {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    max-width: 80%;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: transform 0.2s ease;
+}
+
+.chat-message:hover {
+    transform: translateX(5px);
+}
+
+.bot-message {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    align-self: flex-start;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-message {
+    background: #ffffff;
+    margin-left: auto;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chat-input {
+    display: flex;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 25px 25px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    margin-right: 15px;
+    background: rgba(240, 240, 240, 0.9);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+#user-input:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+#send-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+#send-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#send-btn:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
