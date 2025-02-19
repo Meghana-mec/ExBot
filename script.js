@@ -49,9 +49,7 @@ window.addEventListener('resize', positionEmojis);
 
 
 // Cohere API Configuration
-const COHERE_API_KEY = "osYxK61RftFr9SZtDoeB5Z3q0iuP280DNDThv87c"; // Replace with your Cohere API key
 
-const COHERE_API_URL = 'https://api.cohere.ai/v1/chat';
 
 // Function to add message to chat box
 function addMessageToChat(message, isUser) {
